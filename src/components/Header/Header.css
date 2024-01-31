@@ -1,0 +1,24 @@
+.upHeader{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    
+}
+.upHeader img{
+    height:50px;
+    
+}
+.upHeader h3{
+   margin: 0;
+    
+}
+.navItems a{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+.NavBar{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding:1rem;
+}

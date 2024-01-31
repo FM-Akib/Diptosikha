@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = () => {
+const BloodBank = () => {
     return (
         <div>
-           <h1>This is Aome</h1>
+            Blolodsakjd
         </div>
     );
 };
 
-export default About;
+export default BloodBank;

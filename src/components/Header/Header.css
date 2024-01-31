@@ -1,24 +1,21 @@
-.upHeader{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    
-}
-.upHeader img{
-    height:50px;
-    
-}
-.upHeader h3{
-   margin: 0;
-    
-}
 .navItems a{
-    margin-right: 1rem;
+    margin-right: 2rem;
     font-size: 1.2rem;
+    color: #333;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.navItems {
+    margin-right: 100px;
+   
 }
 .NavBar{
     display: flex;
     align-items: center;
-    justify-content:center;
-    padding:1rem;
+    justify-content:space-between;
+    padding:0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.NavBar img{
+    height:70px;
+    margin-left: 100px;
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import "tw-elements-react/dist/css/tw-elements-react.min.css";
 
@@ -13,12 +12,17 @@ import About from './components/About/About.jsx';
 import Donation from './components/Donation/Donation.jsx';
 import BloodBank from './components/Bloodbank/BloodBank.jsx';
 import Login from './components/Login/Login.jsx';
+import Landing from './components/Landing/Landing.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
     children:[
+      {
+        path: "/",
+        element: <Landing/>
+      },
       {
         path: "about",
         element:<About/>

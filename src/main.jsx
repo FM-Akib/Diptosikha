@@ -33,7 +33,8 @@ const router = createBrowserRouter([
       },
       {
         path: "bloodbank",
-        element: <BloodBank/>
+        element: <BloodBank/>,
+        loader: ()=>fetch('bloodbank.json')
       },
       {
         path: "login",

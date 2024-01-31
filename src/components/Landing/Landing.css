@@ -1,6 +1,16 @@
 .typed-text{
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    color: crimson;
+    font-family: 'Kalam', cursive;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(0, 17, 255);
+    font-family: 'Rubik Glitch Pop', system-ui;
+}
+.header{
+    position: relative;
+}
+.back-head{
+  position: absolute;
+  bottom: 44px;
+  left: 30%;
+    
 }

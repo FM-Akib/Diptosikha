@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/logo_diptosikha.jpg';
 import './Header.css';
-import { TERipple } from 'tw-elements-react';
-import { Link } from 'react-router-dom';
 import Activelink from '../Activelink/Activelink';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars,faX } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
+    const [menu,setMenu]=useState(false);
     return (      
         <nav className='NavBar'>
             <img src={logo} alt=""/>
-            <ul className="navItems">
+            <ul className={` navItems p-4 duration-500 pl-10 ${menu===true?"top-20":"-top-96"}`}>
                 <Activelink to="/">Home</Activelink>
                 <Activelink to="/about">About us</Activelink>
                 <Activelink to="/donation">Donation</Activelink>
@@ -19,6 +18,13 @@ const Header = () => {
                 <Activelink to="/login">Login</Activelink>
                 <Activelink to="/login">Sign up</Activelink>
             </ul>
+            <div  onClick={()=>setMenu(!menu)} className='barsDiv md:hidden'>
+              {      
+              <span>{menu===true? <FontAwesomeIcon className="icnMbl" icon={faX} />
+              : <FontAwesomeIcon className="icnMbl" icon={faBars} />}
+              </span>     
+              }
+            </div>
         </nav>
     
     );

@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BloodCard from '../BloodCard/BloodCard';
 import './Bloodbank.css';
+import Footer from '../Footer/Footer';
 
 const BloodBank = () => {
     const bloodBanks = useLoaderData();
@@ -16,6 +17,7 @@ const BloodBank = () => {
                 ></BloodCard>))
             }
             </div>
+            <Footer/>
         </div>
     );
 };

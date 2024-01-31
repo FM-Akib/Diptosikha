@@ -13,6 +13,7 @@ import Donation from './components/Donation/Donation.jsx';
 import BloodBank from './components/Bloodbank/BloodBank.jsx';
 import Login from './components/Login/Login.jsx';
 import Landing from './components/Landing/Landing.jsx';
+import Signup from './components/Signup/Signup.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login/>
       },
+      {
+        path: "signup",
+        element: <Signup/>
+      }
     ]
   }
   

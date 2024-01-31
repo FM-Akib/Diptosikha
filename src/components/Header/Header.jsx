@@ -16,7 +16,7 @@ const Header = () => {
                 <Activelink to="/donation">Donation</Activelink>
                 <Activelink to="/bloodbank">Blood Bank</Activelink>
                 <Activelink to="/login">Login</Activelink>
-                <Activelink to="/login">Sign up</Activelink>
+                <Activelink to="/signup">Sign up</Activelink>
             </ul>
             <div  onClick={()=>setMenu(!menu)} className='barsDiv md:hidden'>
               {      

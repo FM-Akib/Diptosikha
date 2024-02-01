@@ -49,7 +49,7 @@ const Landing = () => {
                     </p>
                     <p className="mt-8 md:mt-12">
                        <Link to="/donation"><button type="button"
-                            className=" py-4 px-12 bg-teal-500 hover:bg-teal-600 rounded text-white">Donate</button></Link> 
+                            className="shadow-lg py-4 px-12 bg-teal-500 hover:bg-teal-600 rounded text-white">Donate</button></Link> 
                     </p>
                     <p className="mt-4 text-gray-600 bangla-title">- হাকিছে ভবিষ্যত, হও আগুয়ান✊
                     </p>
@@ -147,7 +147,7 @@ const Landing = () => {
                 <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src={education}/>
             </div>
 
-            <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
+            <div className="w-full sm:w-auto flex flex-col items-start sm:items-start">
 
                 <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
                     Education
@@ -175,7 +175,7 @@ const Landing = () => {
                 <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src={treatment}/>
             </div>
 
-            <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
+            <div className="w-full sm:w-auto flex flex-col items-start sm:items-start">
 
                 <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
                 Treatment
@@ -203,7 +203,7 @@ const Landing = () => {
                 <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src={food}/>
             </div>
 
-            <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
+            <div className="w-full sm:w-auto flex flex-col items-start sm:items-start">
 
                 <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
                     Food

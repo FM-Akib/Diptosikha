@@ -3,7 +3,7 @@ import './Signup.css';
 import signlogo from "../../assets/logoD.png"
 const Signup = () => {
     return (
-   <>
+ 
        
 <div className="signup-page min-h-screen bg-gray-100 text-gray-900 flex justify-center">
     <div className="max-w-screen-xl mt-3 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
@@ -101,7 +101,7 @@ const Signup = () => {
         </div>
     </div>
 </div>
-</>
+
     );
 };
 

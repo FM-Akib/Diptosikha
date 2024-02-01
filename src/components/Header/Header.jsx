@@ -13,6 +13,7 @@ const Header = () => {
             <ul className={` navItems p-4 duration-500 pl-10 ${menu===true?"top-20":"-top-96"}`}>
                 <Activelink to="/">Home</Activelink>
                 <Activelink to="/about">About us</Activelink>
+                <Activelink to="/team">Team</Activelink>
                 <Activelink to="/donation">Donation</Activelink>
                 <Activelink to="/bloodbank">Blood Bank</Activelink>
                 <Activelink to="/login">Login</Activelink>

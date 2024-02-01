@@ -15,11 +15,13 @@ import Login from './components/Login/Login.jsx';
 import Landing from './components/Landing/Landing.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Team from './components/Team/Team.jsx';
+import Notfound from './components/Notfound/Notfound.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement: <Notfound/>,
     children:[
       {
         path: "/",

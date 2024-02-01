@@ -1,14 +1,15 @@
 import React from 'react';
 import './Signup.css';
+import signlogo from "../../assets/logoD.png"
 const Signup = () => {
     return (
    <>
        
-<div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+<div className="signup-page min-h-screen bg-gray-100 text-gray-900 flex justify-center">
     <div className="max-w-screen-xl mt-3 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
             <div>
-                <img src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png"
+            <img src={signlogo}
                     className="w-32 mx-auto" />
             </div>
             <div className="mt-12 flex flex-col items-center">

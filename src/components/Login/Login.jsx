@@ -1,8 +1,8 @@
 import React from 'react';
-
+import './Login.css';
 const Login = () => {
     return (
-        <div className="py-20">
+  <div className="py-20 login-page">
     <div className="flex h-full items-center justify-center">
         <div
             className="rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800 flex-col flex h-full items-center justify-center sm:px-4">

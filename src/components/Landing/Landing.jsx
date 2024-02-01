@@ -126,7 +126,7 @@ const Landing = () => {
         </div>
 
         <div  className="misson">
-        <h1>Our Misson</h1>
+        <h1 className="title-font">Our Misson</h1>
             <p>
             Provide support to underprivileged section of the society specially extreme poor, homeless and orphan children through quality education, nourishment & shelter to make them resources for the nation.
             </p>
@@ -140,7 +140,7 @@ const Landing = () => {
             className="relative w-full max-w-2xl my-2 md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">
 
             <span className="absolute text-xs font-medium top-0 left-0 rounded-br-lg rounded-tl-lg px-2 py-1 bg-primary-100 dark:bg-gray-900 dark:text-gray-300 border-gray-400 dark:border-gray-400 border-b-2 border-r-2 border-dashed ">
-                mission
+                Mission
             </span>
 
             <div className="w-full flex justify-center sm:justify-start sm:w-auto">
@@ -168,7 +168,7 @@ const Landing = () => {
             className="relative w-full max-w-2xl my-2 md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">
 
             <span className="absolute text-xs font-medium top-0 left-0 rounded-br-lg rounded-tl-lg px-2 py-1 bg-primary-100 dark:bg-gray-900 dark:text-gray-300 border-gray-400 dark:border-gray-400 border-b-2 border-r-2 border-dashed ">
-                mission
+                Mission
             </span>
 
             <div className="w-full flex justify-center sm:justify-start sm:w-auto">
@@ -196,7 +196,7 @@ const Landing = () => {
             className="relative w-full max-w-2xl my-2 md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">
 
             <span className="absolute text-xs font-medium top-0 left-0 rounded-br-lg rounded-tl-lg px-2 py-1 bg-primary-100 dark:bg-gray-900 dark:text-gray-300 border-gray-400 dark:border-gray-400 border-b-2 border-r-2 border-dashed ">
-                mission
+                Mission
             </span>
 
             <div className="w-full flex justify-center sm:justify-start sm:w-auto">

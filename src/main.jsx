@@ -14,6 +14,7 @@ import BloodBank from './components/Bloodbank/BloodBank.jsx';
 import Login from './components/Login/Login.jsx';
 import Landing from './components/Landing/Landing.jsx';
 import Signup from './components/Signup/Signup.jsx';
+import Team from './components/Team/Team.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       {
         path: "about",
         element:<About/>
+      },
+      {
+        path: "team",
+        element: <Team/>,
+        loader: ()=>fetch('teams.json')
       },
       {
         path: "donation",

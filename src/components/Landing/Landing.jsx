@@ -8,6 +8,10 @@ import volenteer from '../../assets/Volunteer.png';
 import sponsor from '../../assets/sponsor.png';
 import donation from '../../assets/donation.png';
 import education from "../../assets/mission_edu.png";
+import food from "../../assets/mission_food.png";
+import treatment from "../../assets/mission_teatment.png";
+
+import Footer from '../Footer/Footer';
 
 const Landing = () => {
 
@@ -140,7 +144,7 @@ const Landing = () => {
             </span>
 
             <div className="w-full flex justify-center sm:justify-start sm:w-auto">
-                <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src="https://i.pinimg.com/564x/a5/17/09/a51709893a88477e167b86f6ab71b16f.jpg"/>
+                <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src={education}/>
             </div>
 
             <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
@@ -168,7 +172,7 @@ const Landing = () => {
             </span>
 
             <div className="w-full flex justify-center sm:justify-start sm:w-auto">
-                <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src="https://i.pinimg.com/564x/a5/17/09/a51709893a88477e167b86f6ab71b16f.jpg"/>
+                <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src={treatment}/>
             </div>
 
             <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
@@ -196,7 +200,7 @@ const Landing = () => {
             </span>
 
             <div className="w-full flex justify-center sm:justify-start sm:w-auto">
-                <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src="https://i.pinimg.com/564x/a5/17/09/a51709893a88477e167b86f6ab71b16f.jpg"/>
+                <img className="object-cover w-20 h-20 mt-3 mr-3 rounded-full" src={food}/>
             </div>
 
             <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
@@ -218,7 +222,7 @@ const Landing = () => {
 
    
      
-
+<Footer/>
 </>
     );
 };

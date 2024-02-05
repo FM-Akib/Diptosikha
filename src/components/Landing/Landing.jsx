@@ -12,6 +12,11 @@ import food from "../../assets/mission_food.png";
 import treatment from "../../assets/mission_teatment.png";
 
 import Footer from '../Footer/Footer';
+import { BiSolidDonateHeart } from "react-icons/bi";
+// import { TbTargetArrow } from "react-icons/tb";
+import { MdCastForEducation } from "react-icons/md";
+import { FaHandHoldingMedical } from "react-icons/fa6";
+import { MdOutlineFoodBank } from "react-icons/md";
 
 const Landing = () => {
 
@@ -49,7 +54,7 @@ const Landing = () => {
                     </p>
                     <p className="mt-8 md:mt-12">
                        <Link to="/donation"><button type="button"
-                            className="shadow-lg py-4 px-12 bg-teal-500 hover:bg-teal-600 rounded text-white">Donate</button></Link> 
+                            className="shadow-lg py-4 px-12 bg-teal-500 hover:bg-teal-600 rounded text-white flex items-center">Donate<BiSolidDonateHeart className='ml-1' /></button></Link> 
                     </p>
                     <p className="mt-4 text-gray-600 bangla-title">- হাকিছে ভবিষ্যত, হও আগুয়ান✊
                     </p>
@@ -126,7 +131,7 @@ const Landing = () => {
         </div>
 
         <div  className="misson">
-        <h1 className="title-font">Our Misson</h1>
+        <h1 className="title-font ">Our Misson</h1>
             <p>
             Provide support to underprivileged section of the society specially extreme poor, homeless and orphan children through quality education, nourishment & shelter to make them resources for the nation.
             </p>
@@ -149,8 +154,8 @@ const Landing = () => {
 
             <div className="w-full sm:w-auto flex flex-col items-start sm:items-start">
 
-                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
-                    Education
+                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200 flex items-center" >
+                    Education<MdCastForEducation className="ml-1" />
                 </p>
 
                 <div className="mb-4 md:text-lg text-gray-400">
@@ -177,8 +182,8 @@ const Landing = () => {
 
             <div className="w-full sm:w-auto flex flex-col items-start sm:items-start">
 
-                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
-                Treatment
+                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200 flex items-center" >
+                Treatment <FaHandHoldingMedical  className="ml-1" />
                 </p>
 
                 <div className="mb-4 md:text-lg text-gray-400">
@@ -205,8 +210,8 @@ const Landing = () => {
 
             <div className="w-full sm:w-auto flex flex-col items-start sm:items-start">
 
-                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200" >
-                    Food
+                <p className="font-display mb-2 text-2xl font-semibold dark:text-gray-200 flex items-center" >
+                    Food <MdOutlineFoodBank className="ml-1" />
                 </p>
 
                 <div className="mb-4 md:text-lg text-gray-400">

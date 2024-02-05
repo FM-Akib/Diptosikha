@@ -6,7 +6,7 @@ const Team = () => {
     const teams = useLoaderData();
     return (
         <div>
-            <div className="teams-container md:grid-cols-3">
+            <div className="teams-container md:grid md:grid-cols-3 ">
                 {
                     teams.map(team=><Teamperson
                     key={team.id}

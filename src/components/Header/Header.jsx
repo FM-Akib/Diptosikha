@@ -6,6 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars,faX } from '@fortawesome/free-solid-svg-icons';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { IoMdLogOut } from "react-icons/io";
+import NonLogo from '../../assets/NonUser.jpg';
+
+
+
+
 const Header = () => {
     const [menu,setMenu]=useState(false);
     const {user,logOut}=useContext(AuthContext);
@@ -22,7 +27,10 @@ const Header = () => {
                 <Activelink to="/bloodbank">Blood Bank</Activelink>
                 {
                     user ? <>
-<img className="mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={user.photoURL}/>
+{
+    user.photoURL?<img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={user.photoURL}/>:
+    <img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={NonLogo}/>
+}
 <span onClick={logOut} className="cursor-pointer"><IoMdLogOut className='text-3xl'/></span> </> :
                     <>
                     <Activelink to="/login">Login</Activelink>

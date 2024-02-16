@@ -132,7 +132,7 @@ const Landing = () => {
 
         <div  className="misson">
         <h1 className="title-font ">Our Misson</h1>
-            <p>
+            <p className="max-w-2xl text-center">
             Provide support to underprivileged section of the society specially extreme poor, homeless and orphan children through quality education, nourishment & shelter to make them resources for the nation.
             </p>
         </div>

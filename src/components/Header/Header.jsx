@@ -39,10 +39,11 @@ const Header = () => {
                 <Activelink to="/bloodbank">Blood Bank</Activelink>
                 {
                     user ? <>
-{
-    user.photoURL?  <Link to="/profile"><img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={user.photoURL}/></Link>:
-    <img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={NonLogo}/>
-}
+    {
+        user.photoURL?  <Link to="/profile">
+            <img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={user.photoURL}/></Link>:
+       <Link to="/profile"><img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={NonLogo}/></Link> 
+    }
 <span onClick={handlelogOut} className="cursor-pointer"><IoMdLogOut className='text-3xl'/></span> </> :
                     <>
                     <Activelink to="/login">Login</Activelink>

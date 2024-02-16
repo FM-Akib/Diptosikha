@@ -1,6 +1,11 @@
 import { useContext } from 'react';
 import './Login.css';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
+const notify_Login = () => toast.success('Successfully Login!')
+
+
+
 const Login = () => {
 
 
@@ -15,6 +20,7 @@ const Login = () => {
         logInWithEmailandPass(email, password)
         .then(result => {
             console.log(result.user);
+            notify_Login()
         })
         .catch(err=>{
             console.log(err);
@@ -25,6 +31,7 @@ const Login = () => {
         signInWithGoogle()
         .then(result => {
             console.log(result.user);
+            notify_Login()
         })
         .catch(err=>{
             console.log(err.message);
@@ -34,11 +41,12 @@ const Login = () => {
 
 
 
-    return (
+return (
+    <>
+    <Toaster />   
   <div className="py-20 login-page">
-    <div className="flex h-full items-center justify-center">
-        <div
-            className="rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800 flex-col flex h-full items-center justify-center sm:px-4">
+    <div className=" flex h-full items-center justify-center">
+        <div className="rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 flex-col flex h-full items-center justify-center sm:px-4">
             <div className="flex h-full flex-col justify-center gap-4 p-6">
                 <div className="left-0 right-0 inline-block border-gray-200 px-2 py-2.5 sm:px-4">
                     <form onSubmit={handleLogin} className="flex flex-col gap-4 pb-4" data-hs-cf-bound="true">
@@ -122,7 +130,7 @@ const Login = () => {
         </div>
     </div>
 </div>
-
+</>
     );
 };
 

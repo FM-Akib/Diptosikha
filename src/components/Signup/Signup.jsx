@@ -2,8 +2,8 @@ import './Signup.css';
 import signlogo from "../../assets/logoD.png"
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-
-
+import toast, { Toaster } from 'react-hot-toast';
+const notify_signup = () => toast.success('Sign up successful!.');
 
 const Signup = () => {
 
@@ -18,6 +18,7 @@ const handleSignUp=(e)=>{
     createUser(email, password)
     .then(result => {
         console.log(result.user);
+        notify_signup();
     })
     .catch(err=>{
         console.log(err);
@@ -28,6 +29,7 @@ const handleSignUpGoogle=() => {
     signInWithGoogle()
     .then(result => {
         console.log(result.user);
+        notify_signup();
     })
     .catch(err=>{
         console.log(err.message);
@@ -35,7 +37,8 @@ const handleSignUpGoogle=() => {
 }
 
 return (
-        
+<>
+<Toaster />   
 <div className="signup-page min-h-screen bg-gray-100 text-gray-900 flex justify-center">
     <div className="max-w-screen-xl mt-3 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
         <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
@@ -136,7 +139,7 @@ return (
         </div>
     </div>
 </div>
-
+</>   
     );
 };
 

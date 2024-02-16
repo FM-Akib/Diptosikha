@@ -2,13 +2,14 @@ import { useContext } from 'react';
 import './Login.css';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 const notify_Login = () => toast.success('Successfully Login!')
 
 
 
 const Login = () => {
 
-
+    const navigate =useNavigate();
     const {logInWithEmailandPass,signInWithGoogle}=useContext(AuthContext)
 
 
@@ -21,6 +22,8 @@ const Login = () => {
         .then(result => {
             console.log(result.user);
             notify_Login()
+            e.target.reset();
+            navigate('/');
         })
         .catch(err=>{
             console.log(err);
@@ -32,6 +35,7 @@ const Login = () => {
         .then(result => {
             console.log(result.user);
             notify_Login()
+            navigate('/');
         })
         .catch(err=>{
             console.log(err.message);
@@ -46,7 +50,8 @@ return (
     <Toaster />   
   <div className="py-20 login-page">
     <div className=" flex h-full items-center justify-center">
-        <div className="rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 flex-col flex h-full items-center justify-center sm:px-4">
+        <div className="rounded-lg border border-gray-200 bg-white 
+         shadow-2xl dark:border-gray-700 dark:bg-gray-800 flex-col flex h-full items-center justify-center sm:px-4">
             <div className="flex h-full flex-col justify-center gap-4 p-6">
                 <div className="left-0 right-0 inline-block border-gray-200 px-2 py-2.5 sm:px-4">
                     <form onSubmit={handleLogin} className="flex flex-col gap-4 pb-4" data-hs-cf-bound="true">

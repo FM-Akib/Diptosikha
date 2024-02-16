@@ -3,10 +3,11 @@ import signlogo from "../../assets/logoD.png"
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 const notify_signup = () => toast.success('Sign up successful!.');
 
 const Signup = () => {
-
+    const navigate =useNavigate();
 const {createUser,signInWithGoogle}=useContext(AuthContext)
 
 
@@ -19,6 +20,7 @@ const handleSignUp=(e)=>{
     .then(result => {
         console.log(result.user);
         notify_signup();
+        navigate('/');
     })
     .catch(err=>{
         console.log(err);
@@ -30,6 +32,7 @@ const handleSignUpGoogle=() => {
     .then(result => {
         console.log(result.user);
         notify_signup();
+        navigate('/');
     })
     .catch(err=>{
         console.log(err.message);

@@ -8,6 +8,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { IoMdLogOut } from "react-icons/io";
 import NonLogo from '../../assets/NonUser.jpg';
 import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 const notify_logout = () => toast('Logged Out!', {
     icon: '📤',
   });
@@ -39,7 +40,7 @@ const Header = () => {
                 {
                     user ? <>
 {
-    user.photoURL?<img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={user.photoURL}/>:
+    user.photoURL?  <Link to="/profile"><img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={user.photoURL}/></Link>:
     <img className="cursor-pointer mr-3 ml-3  w-10 h-10  rounded-full object-cover" src={NonLogo}/>
 }
 <span onClick={handlelogOut} className="cursor-pointer"><IoMdLogOut className='text-3xl'/></span> </> :

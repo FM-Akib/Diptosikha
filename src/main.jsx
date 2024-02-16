@@ -17,6 +17,8 @@ import Signup from './components/Signup/Signup.jsx';
 import Team from './components/Team/Team.jsx';
 import Notfound from './components/Notfound/Notfound.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
+import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes.jsx';
+import Profile from './components/Profile/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup/>
+      },
+      {
+        path: "profile",
+        element: <PrivateRoutes><Profile/></PrivateRoutes>
       }
     ]
   }

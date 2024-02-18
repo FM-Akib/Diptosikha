@@ -5,7 +5,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 const notify_signup = () => toast.success('Sign up successful!.');
-
+const notify_pass = () => toast.error("Password should be at least 6 characters.")
 const Signup = () => {
     const navigate =useNavigate();
 const {createUser,signInWithGoogle}=useContext(AuthContext)
@@ -15,6 +15,11 @@ const handleSignUp=(e)=>{
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    
+    if(password.length<=5){
+        notify_pass();
+        return;
+    }
 
     createUser(email, password)
     .then(result => {

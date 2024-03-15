@@ -1,3 +1,5 @@
+import ProgrammeCard from "./ProgrammeCard";
+
 const Programme = () => {
     return (
         <section className="bg-gray-100 text-gray-800">
@@ -9,18 +11,16 @@ const Programme = () => {
             </div>     
 <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
+<ProgrammeCard></ProgrammeCard>
 
-
-
-               
                 
-            </div>
-            <div className="flex justify-center">
-                <button type="button" className="px-6 py-3 text-sm rounded-md hover:underline bg-white text-gray-600">Load more posts...</button>
-            </div>
-        </div>
-    </section>
-    );
+</div>
+<div className="flex justify-center">
+<button type="button" className="px-6 py-3 text-sm rounded-md hover:underline bg-white text-gray-600">Load more posts...</button>
+</div>
+</div>
+</section>
+);
 };
 
 export default Programme;

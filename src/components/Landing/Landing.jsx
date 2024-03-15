@@ -17,6 +17,7 @@ import { BiSolidDonateHeart } from "react-icons/bi";
 import { MdCastForEducation } from "react-icons/md";
 import { FaHandHoldingMedical } from "react-icons/fa6";
 import { MdOutlineFoodBank } from "react-icons/md";
+import BloodSection from './BloodSection';
 
 const Landing = () => {
 
@@ -129,6 +130,11 @@ const Landing = () => {
             </div>
 
         </div>
+
+
+
+        <BloodSection></BloodSection>
+
 
         <div  className="misson">
         <h1 className="title-font ">Our Misson</h1>

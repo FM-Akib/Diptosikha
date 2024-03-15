@@ -63,7 +63,7 @@ return (
    </div>
 
    <div className="md:px-10">
-    <div className="login-page w-full space-y-6 text-gray-600 sm:max-w-md">
+    <div className="interFont w-full space-y-6 text-gray-600 sm:max-w-md">
                 <div className="text-center">
                     <img src="https://i.ibb.co/1JwGF7F/a-social-organization.png" width={150} className="mx-auto" />
                     <div className="mt-5 space-y-2">

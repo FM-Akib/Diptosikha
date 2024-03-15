@@ -18,6 +18,7 @@ import { MdCastForEducation } from "react-icons/md";
 import { FaHandHoldingMedical } from "react-icons/fa6";
 import { MdOutlineFoodBank } from "react-icons/md";
 import BloodSection from './BloodSection';
+import Programme from './Programme';
 
 const Landing = () => {
 
@@ -131,10 +132,8 @@ const Landing = () => {
 
         </div>
 
-
-
         <BloodSection></BloodSection>
-
+        <Programme></Programme>
 
         <div  className="misson">
         <h1 className="title-font ">Our Misson</h1>
@@ -143,8 +142,6 @@ const Landing = () => {
             </p>
         </div>
         
-
-
         <div className="h-54 w-full flex items-center justify-center dark:bg-gray-900">
     
         <div

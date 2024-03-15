@@ -1,11 +1,12 @@
 import Footer from '../Footer/Footer';
+import '../../App.css'
 
 const Donation = () => {
     return (
         <>
         <div className="flex items-center justify-center p-12">
     
-    <div className="mx-auto w-full max-w-[550px] bg-white">
+    <div className="interfont mx-auto w-full max-w-[550px] bg-white">
         <form>
             <div className="mb-5">
                 <label  className="mb-3 block text-base font-medium text-[#07074D]">

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import error from '../../assets/error.jpg';
 import './Notfound.css';
 const Notfound = () => {

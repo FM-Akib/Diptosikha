@@ -1,6 +1,35 @@
+import { useQuery } from "@tanstack/react-query";
 import ProgrammeCard from "./ProgrammeCard";
+import axios from "axios";
 
 const Programme = () => {
+
+
+    const { isPending, error, data:programs } = useQuery({
+        queryKey: ['programs'],
+        queryFn: () =>
+        //   fetch('http://localhost:5000/programs')
+        //   .then((res) =>
+        //     res.json(),
+        //   ),
+        axios.get('http://localhost:5000/programs')
+            .then(data => {return data.data;}
+            )
+      })
+    console.log(programs)
+      if (isPending) return <>
+      <div className='flex space-x-2 justify-center items-center bg-white h-screen dark:invert'>
+            <span className='sr-only '>Loading...</span>
+            <div className='h-8 w-8 bg-green-700 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+            <div className='h-8 w-8 bg-green-700 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+            <div className='h-8 w-8 bg-green-700 rounded-full animate-bounce'></div>
+        </div>
+      </>
+    
+      if (error) return 'An error has occurred: ' + error.message
+
+
+
     return (
         <section className="bg-gray-100 text-gray-800">
             

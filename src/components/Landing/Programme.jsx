@@ -16,7 +16,7 @@ const Programme = () => {
             .then(data => {return data.data;}
             )
       })
-    console.log(programs)
+    // console.log(programs)
       if (isPending) return <>
       <div className='flex space-x-2 justify-center items-center bg-white h-screen dark:invert'>
             <span className='sr-only '>Loading...</span>

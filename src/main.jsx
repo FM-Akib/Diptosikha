@@ -65,7 +65,8 @@ const router = createBrowserRouter([
       },
       {
         path: "programs/:id",
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
+        loader: ({ params }) => fetch(`http://localhost:5000/programs/${params.id}`)
       },
       {
         path: "profile",

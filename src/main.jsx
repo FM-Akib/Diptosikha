@@ -19,6 +19,7 @@ import Notfound from './components/Notfound/Notfound.jsx';
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx';
 import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes.jsx';
 import Profile from './components/Profile/Profile.jsx';
+import Blog from './components/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <Signup/>
+      },
+      {
+        path: "programs",
+        element: <Blog></Blog>
       },
       {
         path: "profile",

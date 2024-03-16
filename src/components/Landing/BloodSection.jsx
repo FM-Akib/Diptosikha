@@ -7,7 +7,7 @@ const BloodSection = () => {
         <div className="shadow rounded-xl">
             <div className="grid overflow-hidden text-white shadow-xl md:grid-cols-2 bg-blue-600 rounded-xl">
                 <aside className="p-8 space-y-4 md:p-16">
-                    <h2 className="text-2xl font-bold tracking-tight md:text-4xl font-headline">
+                    <h2 className="text-3xl font-bold tracking-tight md:text-4xl font-headline">
                         Need blood donor?
                     </h2>
 

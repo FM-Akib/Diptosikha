@@ -1,7 +1,6 @@
-import React from 'react';
 import { ReactTyped } from 'react-typed';
 import './Landing.css';
-import backGround from '../../assets/Background_d.png'
+
 import { Link } from 'react-router-dom';
 import LandingHead from '../../assets/landingHead.png';
 import volenteer from '../../assets/Volunteer.png';
@@ -19,6 +18,7 @@ import { FaHandHoldingMedical } from "react-icons/fa6";
 import { MdOutlineFoodBank } from "react-icons/md";
 import BloodSection from './BloodSection';
 import Programme from './Programme';
+import Galary from './Galary';
 
 const Landing = () => {
 
@@ -28,21 +28,8 @@ const Landing = () => {
 
     return (
         <>
-          {/* <div className="back-container bg-cover">
-           
-           </div> */}
-        {/* <div className="header">
-        <img src={backGround} alt=""/>
-        <div className="back-head">
-        <h1 className='typed-text '>Welcome to{" "}
-         <ReactTyped strings={["Diptosikha Social Organization ..."]} typeSpeed={100} loop />
-         </h1>
-        </div>
-        </div> */}
-       
-
-
-    <main className="text-gray-900 landing-page">
+         
+    <main className="text-gray-900 landing-page fjallaFont">
 
 
         <section className="p-12 md:pt-32">
@@ -134,6 +121,7 @@ const Landing = () => {
 
         <BloodSection></BloodSection>
         <Programme></Programme>
+        <Galary></Galary>
 
         <div  className="misson">
         <h1 className="title-font ">Our Misson</h1>
@@ -142,7 +130,7 @@ const Landing = () => {
             </p>
         </div>
         
-        <div className="h-54 w-full flex items-center justify-center dark:bg-gray-900">
+        <div className="h-54 px-2 w-full flex items-center justify-center dark:bg-gray-900">
     
         <div
             className="relative w-full max-w-2xl my-2 md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">
@@ -170,7 +158,7 @@ const Landing = () => {
                  
         </div>
 
-        <div className="h-54 w-full flex items-center justify-center dark:bg-gray-900">
+        <div className="h-54 px-2 w-full flex items-center justify-center dark:bg-gray-900">
     
         <div
             className="relative w-full max-w-2xl my-2 md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">
@@ -198,7 +186,7 @@ const Landing = () => {
                  
         </div>
 
-        <div className="h-54 w-full flex items-center justify-center dark:bg-gray-900">
+        <div className="h-54 px-2 w-full flex items-center justify-center dark:bg-gray-900">
     
         <div
             className="relative w-full max-w-2xl my-2 md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-lg">

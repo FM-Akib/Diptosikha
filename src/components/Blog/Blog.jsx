@@ -16,9 +16,7 @@ console.log(blog);
             </div>
     
            
-            <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c" alt="Featured image" className="w-full h-auto mb-8 rounded-md"/>
-    
-           
+            <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c" alt="Featured image" className="w-full h-auto mb-8 rounded-md"/> 
             <div className="text-justify prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
                 <p>{description}</p>
             </div>

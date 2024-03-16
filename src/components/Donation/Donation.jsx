@@ -1,5 +1,8 @@
 import Footer from '../Footer/Footer';
 import '../../App.css'
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
 
 const Donation = () => {
     const HandleDonationForm=(e)=>{
@@ -13,7 +16,29 @@ const Donation = () => {
         const donationOn = form.querySelector('select').value;
         const trxID = form.trxID.value;
        
-        console.log(name,mobile,email, amount, date,donationOn, trxID);
+        // console.log(name,mobile,email, amount, date,donationOn, trxID);
+        const donation ={name,mobile,email, amount, date,donationOn, trxID};
+        // console.log(donation)
+
+       
+         axios.post('http://localhost:5000/donations',donation)
+         .then(data => {
+        //   console.log(data.data.acknowledged)
+        if(data.data.acknowledged){
+            Swal.fire({
+                title: "Sweet!",
+                text: "Thank you for your contribution.",
+                imageUrl: "https://i.ibb.co/Xzt6s2d/Thank-you-for-your-Contribution.png",
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: "Custom image"
+              });
+        }
+            }
+        )
+        
+       
+         
 
     }
     return (

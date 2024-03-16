@@ -2,12 +2,26 @@ import Footer from '../Footer/Footer';
 import '../../App.css'
 
 const Donation = () => {
+    const HandleDonationForm=(e)=>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const mobile = form.mobile.value;
+        const email = form.email.value;
+        const amount = form.amount.value;
+        const date = form.date.value;
+        const donationOn = form.querySelector('select').value;
+        const trxID = form.trxID.value;
+       
+        console.log(name,mobile,email, amount, date,donationOn, trxID);
+
+    }
     return (
         <>
         <div className="flex items-center justify-center p-12">
     
     <div className="interfont mx-auto w-full max-w-[550px] bg-white">
-        <form>
+        <form onSubmit={HandleDonationForm}>
             <div className="mb-5">
                 <label  className="mb-3 block text-base font-medium text-[#07074D]">
                     Full Name
@@ -46,7 +60,7 @@ const Donation = () => {
                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                     </div>
                 </div>
-                <div className="w-full px-3 sm:w-1/2">
+                {/* <div className="w-full px-3 sm:w-1/2">
                     <div className="mb-5">
                         <label  className="mb-3 block text-base font-medium text-[#07074D]">
                             Time
@@ -54,7 +68,7 @@ const Donation = () => {
                         <input type="time" name="time" id="time"
                             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="mb-5 pt-3">

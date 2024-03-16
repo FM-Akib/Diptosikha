@@ -77,6 +77,7 @@ return (
                             name="name"
                                 type="text"
                                 required
+                                placeholder='Enter your name'
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
                         </div>
@@ -87,6 +88,7 @@ return (
                             <input
                             name="email"
                                 type="email"
+                                placeholder='Enter your email'
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
@@ -97,7 +99,8 @@ return (
                             </label>
                             <input
                                 type="password"
-                            name="password"
+                                name="password"
+                                placeholder='Enter password here'
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />

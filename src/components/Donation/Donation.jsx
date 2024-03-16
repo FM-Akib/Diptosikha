@@ -1,7 +1,6 @@
 import Footer from '../Footer/Footer';
 import '../../App.css'
 import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 
 const Donation = () => {
@@ -23,7 +22,7 @@ const Donation = () => {
        
          axios.post('http://localhost:5000/donations',donation)
          .then(data => {
-        //   console.log(data.data.acknowledged)
+        
         if(data.data.acknowledged){
             Swal.fire({
                 title: "Sweet!",

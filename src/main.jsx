@@ -43,8 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "team",
-        element: <Team/>,
-        loader: ()=>fetch('teams.json')
+        element: <Team/>
       },
       {
         path: "donation",

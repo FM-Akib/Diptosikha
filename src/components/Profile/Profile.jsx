@@ -1,5 +1,7 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import * as Avatar from "@radix-ui/react-avatar";
+import '../../App.css';
+
 
 const Profile = () => {
   const navigation = [
@@ -155,16 +157,16 @@ const Profile = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-20 h-full border-r bg-white space-y-8">
+      <nav className="interfont fixed bottom-0 left-0 w-20 h-[90%] border-r bg-white space-y-8">
         <div className="flex flex-col h-full">
           <div className="h-20 flex items-center justify-center px-8">
-            <a href="javascript:void(0)" className="flex-none">
+            {/* <a href="javascript:void(0)" className="flex-none">
               <img
                 src="https://floatui.com/logo-letter.png"
                 width={35}
                 className="mx-auto"
               />
-            </a>
+            </a> */}
           </div>
           <div className="flex-1 flex flex-col h-full">
             <ul className="px-4 text-sm font-medium flex-1">

@@ -1,22 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
 import ProgrammeCard from "./ProgrammeCard";
 import axios from "axios";
+import { useState } from "react";
 
 const Programme = () => {
+  const [programs,setPrograms] = useState([]);
+  const [dataLength,setDataLength]=useState(4); 
 
-
-    const { isPending, error, data:programs } = useQuery({
+const { isPending, error, data:program } = useQuery({
         queryKey: ['programs'],
         queryFn: () =>
-        //   fetch('http://localhost:5000/programs')
-        //   .then((res) =>
-        //     res.json(),
-        //   ),
         axios.get('http://localhost:5000/programs')
-            .then(data => {return data.data;}
+            .then(data => {
+              setPrograms(data.data);
+              return data.data;
+            }
             )
       })
     // console.log(programs)
+
+
+
+
       if (isPending) return <>
       <div className='flex space-x-2 justify-center items-center bg-white h-screen dark:invert'>
             <span className='sr-only '>Loading...</span>
@@ -41,7 +46,7 @@ const Programme = () => {
 <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
 {
-    programs?.map(program=> <ProgrammeCard
+  programs.slice(0,dataLength)?.map(program=> <ProgrammeCard
     key={program._id}
     program = {program}
     ></ProgrammeCard>)
@@ -49,8 +54,10 @@ const Programme = () => {
 
                 
 </div>
-<div className="flex justify-center">
-<button type="button" className="px-6 py-3 text-sm rounded-md hover:underline bg-white text-gray-600">Load more posts...</button>
+
+
+<div className={`flex justify-center  ${dataLength===programs.length && 'hidden'}`}>
+<button  onClick={()=>setDataLength(programs.length)}  type="button" className="px-6 py-3 text-sm rounded-md hover:bg-gray-600 hover:text-white bg-white text-gray-600 transition-transform">Load more posts...</button>
 </div>
 </div>
 </section>

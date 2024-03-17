@@ -14,7 +14,7 @@ const Team = () => {
             .then(data => {return data.data;}
             )
       })
-    //  console.log(teams)
+      console.log(team)
     const teams = team.filter(t=>t.designation!=='');
      
 

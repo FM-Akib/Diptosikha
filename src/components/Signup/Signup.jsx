@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const notify_signup = () => toast.success('Sign up successful!.');
 const notify_pass = () => toast.error("Password should be at least 6 characters.")
 const Signup = () => {
@@ -12,31 +13,69 @@ const {createUser,signInWithGoogle}=useContext(AuthContext)
 
 const handleSignUp=(e)=>{
     e.preventDefault();
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+    const mobile = e.target.mobile.value;
+    const bloodGroup = e.target.querySelector('select').value;
+
+  
     if(password.length<=5){
         notify_pass();
         return;
     }
+   
 
     createUser(email, password)
     .then(result => {
         console.log(result.user);
-        notify_signup();
-        navigate('/');
+        // notify_signup();
+       
+        const img='',facebook="",address="",education="",lastDonate="";
+        const user = {name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
+              
+        axios.post('http://localhost:5000/users',user)
+         .then(data => {
+
+            if(data.data.acknowledged){
+                navigate('/');
+                notify_signup();
+            }
+            }
+        )
     })
     .catch(err=>{
         console.log(err);
     })
+
+
+
+
 }
 
 const handleSignUpGoogle=() => {
     signInWithGoogle()
     .then(result => {
-        console.log(result.user);
-        notify_signup();
-        navigate('/');
+        
+        // notify_signup();
+        // navigate('/');
+        const name=result.user.displayName;
+        const email=result.user.email;
+        const img=result.user.photoURL;
+    
+
+        const password="admin",facebook="",address="",education="",lastDonate="",mobile="",bloodGroup="";
+        const user = {name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
+              
+        axios.post('http://localhost:5000/users',user)
+         .then(data => {
+
+            if(data.data.acknowledged){
+                navigate('/');
+                notify_signup();
+            }
+            }
+        )
     })
     .catch(err=>{
         console.log(err.message);
@@ -74,19 +113,66 @@ return (
                                 Name
                             </label>
                             <input
-                            name="name"
+                                name="name"
                                 type="text"
                                 required
                                 placeholder='Enter your name'
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
                         </div>
+
+                        <div className="flex justify-center items-center">
+
+                        <div className="mr-2 relative">
+                            <label className="font-medium">
+                                Blood Group
+                            </label>
+                            <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="absolute top-8 bottom-0 w-5 h-5 my-auto text-gray-400 right-3"
+                        viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                        />
+                    </svg>
+                    <select className="w-full mt-2 py-2 px-3 text-sm text-gray-600 bg-white border rounded-lg shadow-sm outline-none appearance-none focus:ring-offset-2 focus:ring-indigo-600 focus:ring-2">
+                        <option>A+</option>
+                        <option>B+</option>
+                        <option>O+</option>
+                        <option>AB+</option>
+                        <option>A-</option>
+                        <option>B-</option>
+                        <option>O-</option>
+                        <option>AB-</option>
+                        <option>Dont know</option>
+                    </select>
+                        </div>
+                        <div>
+                            <label className="font-medium">
+                                Mobile
+                            </label>
+                            <input
+                                name="mobile"
+                                type="text"
+                                required
+                                placeholder='Enter your Contact'
+                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                            />
+                        </div>
+
+                        </div>
+
+
+
                         <div>
                             <label className="font-medium">
                                 Email
                             </label>
                             <input
-                            name="email"
+                                name="email"
                                 type="email"
                                 placeholder='Enter your email'
                                 required

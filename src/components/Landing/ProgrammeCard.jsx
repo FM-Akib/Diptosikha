@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProgrammeCard = ({program}) => {
      const {title,date,description,_id } = program;
-     console.log(title)
+    //  console.log(title)
     return (
         <Link to={`/programs/${_id}`} className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-gray-50">
         <img role="presentation" className="object-cover w-full rounded h-44 bg-gray-500" src="https://source.unsplash.com/random/480x360?1" />

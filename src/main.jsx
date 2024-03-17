@@ -43,7 +43,8 @@ const router = createBrowserRouter([
       },
       {
         path: "team",
-        element: <Team/>
+        element: <Team/>,
+        loader: () =>fetch('http://localhost:5000/users')
       },
       {
         path: "donation",

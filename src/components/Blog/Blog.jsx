@@ -4,7 +4,7 @@ import '../../App.css';
 const Blog = () => {
        
    const blog = useLoaderData();
-console.log(blog);
+// console.log(blog);
   const {title, description, date} = blog;
     return (
         <div className="Trio-Bangla max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

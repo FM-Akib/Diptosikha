@@ -5,6 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
 import BlogEdit from './BlogEdit';
+import Table from './table';
 const notify_passNM = () => toast.error("Password and Confirmed not matched!")
 const notify_update = () => toast.success('Update successful! Please Reload!');
 
@@ -88,10 +89,13 @@ const Profile = () => {
 
         <>
         <Toaster /> 
+ 
         <div className="md:w-[90%]  mx-auto interfont">
+            
         <div className="">
-        <div className=" mx-auto py-8">
-        <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
+        <div className=" mx-auto py-8 ">
+            
+        <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4 ">
             <div className="col-span-4 sm:col-span-3">
                 <div className="bg-white shadow-lg rounded-lg p-6">
                     <div className="flex flex-col items-center">
@@ -252,10 +256,19 @@ const Profile = () => {
            
 
         </div>
+         
+        <div className="md:grid grid-cols-12">
+        <div className="col-span-4">
         <BlogEdit></BlogEdit>
-    </div>
-</div>
         </div>
+        <div className="col-span-8 md:mt-20">
+        <h1 className="text-3xl font-bold text-center py-6">Donations List</h1>
+        <Table></Table>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
         </>
     );
 };

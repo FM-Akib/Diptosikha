@@ -1,7 +1,7 @@
 
 const BlogEdit = () => {
     return (        
- <div className="md:px-10">
+ <div className="md:px-10 md:mt-20">
    <div className="w-full space-y-6 text-gray-600 sm:max-w-md interFont">
                 <div className="text-center">
                     
@@ -9,7 +9,7 @@ const BlogEdit = () => {
                         <h3 className="text-gray-800 text-3xl font-bold sm:text-3xl">Post a Program</h3>
                     </div>
                 </div>
-                <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
+                <div className="bg-yellow-50 shadow p-4 py-6 sm:p-6 sm:rounded-lg">
                     <form  className="space-y-5">
                         <div>
                             <label className="font-medium">
@@ -23,7 +23,7 @@ const BlogEdit = () => {
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
 
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center items-center gap-4">
 
                         <div>
                             <label className="font-medium">

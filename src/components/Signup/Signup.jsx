@@ -64,7 +64,7 @@ const handleSignUpGoogle=() => {
         const img=result.user.photoURL;
     
 
-        const password="admin",facebook="",address="",education="",lastDonate="",mobile="",bloodGroup="";
+        const password="admin",facebook="",address="",education="",lastDonate="",mobile="",bloodGroup="Dont know";
         const user = {name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
               
         axios.post('http://localhost:5000/users',user)

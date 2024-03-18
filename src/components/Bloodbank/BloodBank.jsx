@@ -1,12 +1,12 @@
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BloodCard from '../BloodCard/BloodCard';
 import './Bloodbank.css';
 import Footer from '../Footer/Footer';
 
 const BloodBank = () => {
-    const bloodBanks = useLoaderData();
-    console.log(bloodBanks);
+    const bloodBank = useLoaderData();
+    const bloodBanks = bloodBank.filter(b=>b.bloodGroup!="Dont know")
+    // console.log(bloodBanks);
     return (
         <div>
             <div className="blood-container">

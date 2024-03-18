@@ -7,7 +7,7 @@ const Programme = () => {
   const [programs,setPrograms] = useState([]);
   const [dataLength,setDataLength]=useState(4); 
 
-const { isPending, error, data:program } = useQuery({
+const { isPending, error} = useQuery({
         queryKey: ['programs'],
         queryFn: () =>
         axios.get('http://localhost:5000/programs')

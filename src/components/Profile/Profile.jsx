@@ -4,6 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Link, useLoaderData } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
+import BlogEdit from './BlogEdit';
 const notify_passNM = () => toast.error("Password and Confirmed not matched!")
 const notify_update = () => toast.success('Update successful! Please Reload!');
 
@@ -88,8 +89,8 @@ const Profile = () => {
         <>
         <Toaster /> 
         <div className="md:w-[90%]  mx-auto interfont">
-           <div className="">
-    <div className=" mx-auto py-8">
+        <div className="">
+        <div className=" mx-auto py-8">
         <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
             <div className="col-span-4 sm:col-span-3">
                 <div className="bg-white shadow-lg rounded-lg p-6">
@@ -117,9 +118,6 @@ const Profile = () => {
                     </div>
                 </div>
             </div>
-
-
-
 
 
             <div className="col-span-4 sm:col-span-9 ">
@@ -250,7 +248,11 @@ const Profile = () => {
                     
                 </div>
             </div>
+
+           
+
         </div>
+        <BlogEdit></BlogEdit>
     </div>
 </div>
         </div>

@@ -1,6 +1,92 @@
+import { useContext } from 'react';
 import '../../App.css'
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Link, useLoaderData } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
+const notify_passNM = () => toast.error("Password and Confirmed not matched!")
+const notify_update = () => toast.success('Update successful! Please Reload!');
+
+
+
+
 const Profile = () => {
+    const {user} = useContext(AuthContext);
+    const users = useLoaderData();
+
+    const userProfile = users.find(u=>u.email ===user.email)
+    const {_id,name,designation,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate} = userProfile;
+
+// console.log(userProfile);
+
+    const handleUserUpdated=(e)=>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const mobile = form.mobile.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const bloodGroup = form.bloodGroup.value;
+        // const donationOn = form.querySelector('select').value;
+        const facebook = form.facebook.value;
+        const address = form.address.value;
+        const education = form.education.value;
+        const lastDonate = form.lastDonate.value;
+        const Newpassword = form.Newpassword.value;
+
+
+        const form2= new FormData(e.target);
+        const img = form2.get('image');
+        
+
+        if(password!==Newpassword) {
+            notify_passNM();
+            return;
+        }
+
+        const data = new FormData();
+        data.append("image",img);
+
+        
+        
+        fetch('https://api.imgbb.com/1/upload?key=68df54b3a756703bfa8633e5fbc95347',{
+            method: 'POST',
+            body: data,
+        })
+        .then(response =>response.json())
+        .then(data =>{
+            const img=data.data.url;
+            // console.log(img2);
+            const Newuser ={name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate};
+            // console.log(Newuser);
+
+
+        axios.put(`http://localhost:5000/users/${_id}`,Newuser)
+        .then(data => {
+        
+        if(data.data.acknowledged){
+            notify_update();}
+            }
+        )
+        
+        } 
+        );
+       
+        
+        // const Newuser ={name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate};
+        
+
+       
+         
+        
+    }
+
+
+
     return (
+
+        <>
+        <Toaster /> 
         <div className="md:w-[90%]  mx-auto interfont">
            <div className="">
     <div className=" mx-auto py-8">
@@ -8,37 +94,29 @@ const Profile = () => {
             <div className="col-span-4 sm:col-span-3">
                 <div className="bg-white shadow-lg rounded-lg p-6">
                     <div className="flex flex-col items-center">
-                        <img src="https://randomuser.me/api/portraits/men/94.jpg" className="w-32 h-32 bg-white rounded-full mb-4 shrink-0">
+                        <img src={img?img:'https://i.ibb.co/4ZdWfbc/Untitled-design.png'} alt="profile photo" className="w-32 h-32 bg-white cover rounded-full mb-4 shrink-0">
 
                         </img>
-                        <h1 className="text-xl font-bold">John Doe</h1>
-                        <p className="text-gray-700">Software Developer</p>
+                        <h1 className="text-xl font-bold">{name}</h1>
+                        <p className="text-gray-700">{designation}</p>
                         <div className="mt-6 flex flex-wrap gap-4 justify-center">
-                            <a href="#" className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</a>
-                            <a href="#" className="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Resume</a>
+                            <Link to={facebook} className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</Link>
+                            <Link to={facebook} className="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Message</Link>
                         </div>
                     </div>
                     <hr className="my-6 border-t border-gray-300"/>
                     <div className="flex flex-col">
                         <span className="text-gray-700 uppercase font-bold tracking-wider mb-2">Personal Information</span>
                         <ul>
-                            <li className="mb-2">Email - </li>
-                            <li className="mb-2">Contact - </li>
-                            <li className="mb-2">Blood Group - </li>
-                            <li className="mb-2">Last Donated - </li>
-                            <li className="mb-2">Address - </li>
+                            <li className="mb-2"><span className='font-bold'>Email</span> - <span className="text-green-700">{email}</span></li>
+                            <li className="mb-2"><span className='font-bold'>Contact</span> - <span className="text-green-700">{mobile}</span></li>
+                            <li className="mb-2"><span className='font-bold'>Blood Group</span> - <span className="text-green-700">{bloodGroup}</span></li>
+                            <li className="mb-2"><span className='font-bold'>Last Donated</span> - <span className="text-green-700">{lastDonate}</span></li>
+                            <li className="mb-2"><span className='font-bold'>Address</span> - <span className="text-green-700">{address}</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -55,7 +133,7 @@ const Profile = () => {
                 </div>
 
                 <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
-                    <form onSubmit={(e) => e.preventDefault()}
+                    <form onSubmit={handleUserUpdated}
                         className="space-y-5">
 
                         <div className="md:grid md:grid-cols-2 md:gap-4 ">
@@ -64,7 +142,9 @@ const Profile = () => {
                                 Name
                             </label>
                             <input
+                                name="name"
                                 type="text"
+                                defaultValue={name}
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
@@ -76,6 +156,8 @@ const Profile = () => {
                             <input
                                 type="email"
                                 required
+                                name="email"
+                                defaultValue={email}
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
                         </div>
@@ -86,7 +168,7 @@ const Profile = () => {
                             <label className="font-medium">
                                 Image
                             </label>
-                            <input type="file" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name="image" type="file" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
                         <div>
                             <label className="font-medium">
@@ -94,6 +176,8 @@ const Profile = () => {
                             </label>
                             <input
                                 type="password"
+                                name="password"
+                                defaultValue={password}
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
@@ -107,6 +191,7 @@ const Profile = () => {
                             </label>
                             <input
                                 type="password"
+                                name="Newpassword"
                                 required
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                             />
@@ -115,7 +200,7 @@ const Profile = () => {
                             <label className="font-medium">
                                 Blood Group
                             </label>
-                            <input type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name="bloodGroup" defaultValue={bloodGroup} type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
                         </div>
                         
@@ -124,13 +209,13 @@ const Profile = () => {
                             <label className="font-medium">
                                Last Donated
                             </label>
-                            <input type="date" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name="lastDonate" defaultValue={lastDonate} type="date" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
                         <div>
                             <label className="font-medium">
                                 Education Institute
                             </label>
-                            <input type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name="education" defaultValue={education} type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
                         </div>
                          
@@ -139,13 +224,13 @@ const Profile = () => {
                             <label className="font-medium">
                                 Facebook URL
                             </label>
-                            <input type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name='facebook' defaultValue={facebook} type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
                         <div>
                             <label className="font-medium">
                                 Contact
                             </label>
-                            <input type="number" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name="mobile" defaultValue={mobile} type="number" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
                          </div>
                         
@@ -153,7 +238,7 @@ const Profile = () => {
                             <label className="font-medium">
                                 Address
                             </label>
-                            <input type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
+                            <input name="address" defaultValue={address} type="text" className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"/>
                         </div>
 
 
@@ -169,6 +254,7 @@ const Profile = () => {
     </div>
 </div>
         </div>
+        </>
     );
 };
 

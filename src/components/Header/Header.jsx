@@ -33,7 +33,7 @@ const Header = () => {
         <Toaster />      
         <nav className='NavBar'>
            <Link to="/"><img className='logo_diptoshikha' src={logo} alt=""/></Link> 
-            <ul className={` navItems p-4 duration-500 pl-10 flex items-center ${menu===true?"top-20":"-top-96"}`}>
+            <ul className={` navItems p-4 duration-500 pl-10 flex items-center ${menu===true?"top-20":"-top-[450px]"}`}>
                 <Activelink to="/">Home</Activelink>
                 <Activelink to="/about">About us</Activelink>
                 <Activelink to="/team">Team</Activelink>

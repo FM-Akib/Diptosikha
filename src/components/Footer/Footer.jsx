@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import NavLogo from '../../assets/nav_logo.png';
 import './Footer.css';
@@ -10,7 +9,7 @@ import {faMapLocationDot, faMobileAlt,faEnvelope,faEarthAmericas} from '@fortawe
 const Footer = () => {
     return (
         <footer className="footer mt-6">
-    <div className="bg-sky-200 py-4 text-gray-900 md:p-24">
+    <div className="bg-orange-100 py-4 text-gray-900 md:p-24">
       <div className="container px-4 mx-auto">
         <div className="-mx-4 flex flex-wrap justify-between">
           <div className="px-4 my-4 w-full xl:w-1/5">

@@ -2,10 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import ProgrammeCard from "./ProgrammeCard";
 import axios from "axios";
 import { useState } from "react";
+import '../../App.css';
 
 const Programme = () => {
   const [programs,setPrograms] = useState([]);
-  const [dataLength,setDataLength]=useState(4); 
+  const [dataLength,setDataLength]=useState(3); 
 
 const { isPending, error} = useQuery({
         queryKey: ['programs'],
@@ -43,7 +44,7 @@ const { isPending, error} = useQuery({
             <h1 className="text-3xl font-bold">Our Organized Programme</h1>
             <p className="my-2">We helped people by organizing medical camp and several other unique events.</p>
             </div>     
-<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+<div className="Trio-Bangla grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
 {
   programs.slice(0,dataLength)?.map(program=> <ProgrammeCard

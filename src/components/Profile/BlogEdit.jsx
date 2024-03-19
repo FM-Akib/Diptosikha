@@ -1,5 +1,55 @@
+import axios from "axios";
+import toast from "react-hot-toast";
+const notify_update_post = () => toast.success('Post successful!');
 
 const BlogEdit = () => {
+
+    const handleEditBlog=(e)=>{
+        e.preventDefault();
+        const form = e.target;
+        const title = form.title.value;
+        const cost = form.cost.value;
+        const author = form.author.value;
+        const imgtitle = form.imgtitle.value;
+        const date = form.date.value;
+        // const donationOn = form.querySelector('select').value;
+        const description = form.description.value;
+
+
+
+        const form3= new FormData(e.target);
+        const img = form3.get('image');
+
+        const data = new FormData();
+        data.append("image",img);
+
+        
+        
+        fetch('https://api.imgbb.com/1/upload?key=68df54b3a756703bfa8633e5fbc95347',{
+            method: 'POST',
+            body: data,
+        })
+        .then(response =>response.json())
+        .then(data =>{
+            const img=data.data.url;
+            
+            const Newprogram ={title,img,cost,author,imgtitle,date,description};
+
+
+        axios.post(`http://localhost:5000/programs`,Newprogram)
+        .then(data => {
+        
+        if(data.data.acknowledged){
+            notify_update_post();}
+            }
+        )
+        
+        } 
+        );
+    
+    }
+
+
     return (        
  <div className="md:px-10 md:mt-20">
    <div className="w-full space-y-6 text-gray-600 sm:max-w-md interFont">
@@ -10,7 +60,7 @@ const BlogEdit = () => {
                     </div>
                 </div>
                 <div className="bg-yellow-50 shadow p-4 py-6 sm:p-6 sm:rounded-lg">
-                    <form  className="space-y-5">
+                    <form onSubmit={handleEditBlog}  className="space-y-5">
                         <div>
                             <label className="font-medium">
                                Title

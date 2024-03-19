@@ -39,10 +39,10 @@ const Footer = () => {
               <h2 className="footer-title inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Contact</h2>
             </div>
             <ul className="leading-8">
-              <li><Link to="https://www.facebook.com/Mirsarai-Chittagong-Bangladesh-107129452651540/" className="hover:text-gray-600"><FontAwesomeIcon className="icnMbl" icon={faMapLocationDot} /> Zorarganj, Mirsarai, Chattagram, Bangladesh.</Link></li>
-              <li><Link to="+880 170 174 1656" className="hover:text-gray-600"><FontAwesomeIcon className="icnMbl" icon={faMobileAlt} /> +880 170 174 1656</Link></li>
-              <li><Link to="www.diptosikha17@gmail.com" className="hover:text-gray-600"><FontAwesomeIcon className="icnMbl" icon={faEnvelope} /> diptosikha17@gmail.com</Link></li>
-              <li><Link to="https://en.wikialpha.org/mediawiki/index.php?title=User%3ADiptosikha&redirect=no&fbclid=IwAR25vxmG4APQTGznyGWh3D9Lml9Nu70iJ_zanrtTySBXC17X5uCvk3GKFu8" className="hover:text-gray-600"><FontAwesomeIcon className="icnMbl" icon={faEarthAmericas} /> Wikipedia</Link></li>
+              <li><Link to="https://www.facebook.com/Mirsarai-Chittagong-Bangladesh-107129452651540/" className="hover:text-gray-600 flex items-center"><FontAwesomeIcon className="icnMbl mr-1" icon={faMapLocationDot} /> Zorarganj, Mirsarai, Chattagram, Bangladesh.</Link></li>
+              <li><Link to="+880 170 174 1656" className="hover:text-gray-600 flex items-center"><FontAwesomeIcon className="icnMbl mr-1" icon={faMobileAlt} /> +880 170 174 1656</Link></li>
+              <li><Link to="www.diptosikha17@gmail.com" className="hover:text-gray-600 flex items-center"><FontAwesomeIcon className="icnMbl mr-1" icon={faEnvelope} /> diptosikha17@gmail.com</Link></li>
+              <li><Link to="https://en.wikialpha.org/mediawiki/index.php?title=User%3ADiptosikha&redirect=no&fbclid=IwAR25vxmG4APQTGznyGWh3D9Lml9Nu70iJ_zanrtTySBXC17X5uCvk3GKFu8" className="hover:text-gray-600 flex items-center"><FontAwesomeIcon className="icnMbl mr-1" icon={faEarthAmericas} /> Wikipedia</Link></li>
             </ul>
           </div>
           <div className="px-4 my-4 w-full sm:w-auto xl:w-1/5">

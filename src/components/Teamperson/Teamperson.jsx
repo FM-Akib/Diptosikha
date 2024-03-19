@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 
 // import teamBack from '../../assets/team/team_back.png';
 const Teamperson = ({person}) => {
-    const {name,designation,img,bloodGroup,mobile,education}=person;
+    const {name,designation,img,bloodGroup,mobile,education,facebook}=person;
+
+//    console.log(facebook);
+
     return (
        
 
@@ -30,7 +34,8 @@ const Teamperson = ({person}) => {
                 </li>
             </ul>
             <div className="p-4 border-t mx-8 mt-2">
-                <button className="w-1/2 block mx-auto rounded-full bg-blue-800 hover:shadow-lg font-semibold text-white px-6 py-2">Contact</button>
+                <Link to={facebook}>
+                <button className="w-1/2 block mx-auto rounded-full bg-blue-800 hover:shadow-lg font-semibold text-white px-6 py-2">Contact</button> </Link>
             </div>
         </div>
     );

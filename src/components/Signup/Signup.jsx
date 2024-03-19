@@ -31,8 +31,8 @@ const handleSignUp=(e)=>{
         console.log(result.user);
         // notify_signup();
        
-        const img='',facebook="",address="",education="",lastDonate="";
-        const user = {name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
+        const img="",designation="",facebook="",address="",education="",lastDonate="";
+        const user = {name,designation,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
               
         axios.post('http://localhost:5000/users',user)
          .then(data => {
@@ -64,8 +64,8 @@ const handleSignUpGoogle=() => {
         const img=result.user.photoURL;
     
 
-        const password="admin",facebook="",address="",education="",lastDonate="",mobile="",bloodGroup="Dont know";
-        const user = {name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
+        const password="admin",designation="",facebook="",address="",education="",lastDonate="",mobile="",bloodGroup="Dont know";
+        const user = {name,designation,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
               
         axios.post('http://localhost:5000/users',user)
          .then(data => {

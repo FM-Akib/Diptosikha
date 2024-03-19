@@ -42,9 +42,9 @@ const Donation = () => {
     }
     return (
         <>
-        <div className="flex items-center justify-center p-12">
+        <div className="interfont flex items-center justify-center p-4 md:p-12">
     
-    <div className="interfont mx-auto w-full max-w-[550px] bg-white">
+    <div className=" mx-auto w-full max-w-[550px] bg-white">
         <form onSubmit={HandleDonationForm}>
             <div className="mb-5">
                 <label  className="mb-3 block text-base font-medium text-[#07074D]">

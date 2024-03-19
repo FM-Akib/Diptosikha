@@ -35,6 +35,7 @@ const Profile = () => {
         const education = form.education.value;
         const lastDonate = form.lastDonate.value;
         const Newpassword = form.Newpassword.value;
+        const designation="";
 
 
         const form2= new FormData(e.target);
@@ -59,7 +60,7 @@ const Profile = () => {
         .then(data =>{
             const img=data.data.url;
             // console.log(img2);
-            const Newuser ={name,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate};
+            const Newuser ={name,designation,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate};
             // console.log(Newuser);
 
 
@@ -125,7 +126,7 @@ const Profile = () => {
 
 
             <div className="col-span-4 sm:col-span-9 ">
-                <div className="bg-white shadow-lg rounded-lg p-6">
+                <div className="bg-white shadow-lg rounded-lg md:p-6">
                      <div className="w-full  space-y-6 text-gray-600 ">
                 <div className="text-center">
                     <div className="mt-5 space-y-2">
@@ -257,7 +258,9 @@ const Profile = () => {
 
         </div>
          
-        <div className="md:grid grid-cols-12">
+        {
+            user.email==='diptosikha17@gmail.com'? <>
+            <div className="md:grid grid-cols-12">
         <div className="col-span-4">
         <BlogEdit></BlogEdit>
         </div>
@@ -266,6 +269,11 @@ const Profile = () => {
         <Table></Table>
         </div>
         </div>
+            </>:''
+        }
+
+
+
     </div>
     </div>
     </div>

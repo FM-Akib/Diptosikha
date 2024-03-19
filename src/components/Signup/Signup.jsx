@@ -34,7 +34,7 @@ const handleSignUp=(e)=>{
         const img="",designation="",facebook="",address="",education="",lastDonate="";
         const user = {name,designation,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
               
-        axios.post('http://localhost:5000/users',user)
+        axios.post('https://diptosikha-server.vercel.app/users',user)
          .then(data => {
 
             if(data.data.acknowledged){
@@ -67,7 +67,7 @@ const handleSignUpGoogle=() => {
         const password="admin",designation="",facebook="",address="",education="",lastDonate="",mobile="",bloodGroup="Dont know";
         const user = {name,designation,email,password,mobile,bloodGroup,img,facebook,address,education,lastDonate}
               
-        axios.post('http://localhost:5000/users',user)
+        axios.post('https://diptosikha-server.vercel.app/users',user)
          .then(data => {
 
             if(data.data.acknowledged){

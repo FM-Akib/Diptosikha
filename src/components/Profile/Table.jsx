@@ -7,7 +7,7 @@ const Table = () => {
     const { isPending, error,data:donations} = useQuery({
         queryKey: ['donations'],
         queryFn: () =>
-        axios.get('http://localhost:5000/donations')
+        axios.get('https://diptosikha-server.vercel.app/donations')
             .then(data => {
             //   setPrograms(data.data);
               return data.data;

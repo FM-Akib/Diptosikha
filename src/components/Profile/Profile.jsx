@@ -64,7 +64,7 @@ const Profile = () => {
             // console.log(Newuser);
 
 
-        axios.put(`http://localhost:5000/users/${_id}`,Newuser)
+        axios.put(`https://diptosikha-server.vercel.app/users/${_id}`,Newuser)
         .then(data => {
         
         if(data.data.acknowledged){

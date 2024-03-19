@@ -16,7 +16,7 @@ const About = () => {
       <div className="lg:w-[50%] xs:w-full">
         <img className="lg:rounded-t-lg sm:rounded-sm xs:rounded-sm" src="https://i.ibb.co/C6N7yBt/Untitled-design-1-1.png" />
       </div>
-      <div className="lg:w-[50%] sm:w-full xs:w-full bg-yellow-100 dark:bg-gray-900 dark:text-gray-400 md:p-4 xs:p-0 rounded-md shadow-lg">
+      <div className="lg:w-[50%] sm:w-full xs:w-full bg-yellow-100 dark:bg-gray-900 dark:text-gray-400 p-4 xs:p-0 rounded-md shadow-lg">
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">আমরা কি করতে চাই?</h2>
         <p className="text-md mt-4 p-2 text-justify">আমরা চাই আমাদের মাধ্যমে কিছু মানুষের উপকার হোক। আমার চাই আমাদের মাধ্যমে একজন ক্ষুধার্ত মানুষ তার ক্ষুধা নিবারন করুক। আমরা চাই আমাদের মাধ্যমে একজন ইভটিজার তার স্বভাব থেকে দূরে সরে আসুক। আমরা চাই আমাদের মাধ্যমে একজন তরুণ সমাজ সেবা করুক। আমরা চাই আমাদের মাধ্যমে নতুন প্রজন্ম আলোর দিকে আসুক। আমরা চাই আমাদের মাধ্যমে একজন মাদক সেবনকারী তার এই অন্ধকার  জগত থেকে বেরিয়ে আলোর মুখ দেখুক। আমরা চাই আমাদের মাধ্যমে স্কুলের ঐ ছাত্রটা সাহায্য পাক যার পরিবার কিনা তার পড়াশোনার টাকা দিতে পারছেনা। আমরা চাই আমাদের মাধ্যমে ঐ জীবনটা রক্ষা পাক যার জীবনের বাঁচার জন্যে রক্তের প্রয়োজন ছিলো। আমরা চাই আমাদের মাধ্যমে একজন মানুষ সবার মতো ঈদে একটি নতুন জামা পড়তে পারুক। আমরা চাই আমাদের মাধ্যমে আপনিও যে-কোনোভাবে উপক্রিত হোন। আমাদের এই ক্ষুদ্র প্রচেষ্টা আপনাদের কাছে কেমন লাগলো তা আমি জানি না কিন্তু আমরা মনে করি সমাজে কিছু মানুষ আছে যারা আসলেই চায় সমাজে সবাই সঠিক পরিবর্তন আসুক। সমাজে কিছু মানুষ চায় তার দ্বারা কিছু ভালো কাজ হোক। আমরা তাদের নিয়ে কাজ করে এই সমাজটাকে নতুন কিছু উপহার করতে চাই। ইনশাআল্লাহ আমরা মানুষের সেবা করে যাবো। আপনারা আমাদের পাশে থাকবেন এটাই আমাদের কামনা। 
 </p>
@@ -29,7 +29,7 @@ const About = () => {
         <img className="lg:rounded-t-lg sm:rounded-sm xs:rounded-sm" src="https://i.ibb.co/PgLbWZ9/Untitled-design-2-1.png" />
       </div>
       
-      <div className="shadow-lg lg:w-[50%] xs:w-full bg-green-100 dark:bg-gray-900 dark:text-gray-400 md:p-4 xs:p-0 rounded-md">
+      <div className="shadow-lg lg:w-[50%] xs:w-full bg-green-100 dark:bg-gray-900 dark:text-gray-400 p-4 xs:p-0 rounded-md">
         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">আমাদের দল সম্পর্কে</h2>
 
         <p className="text-md mt-4 p-2 text-justify"> আমরা এখানে প্রত্যেকই শিক্ষার্থী, আজকে আমরা আমাদের সমাজের দায়িত্ব না নিলে মানুষের মনুষ্যত্ব, মানবতা সব বিলীন হয়ে যাবে।দায়িত্ব নিতে হবে প্রত্যন্ত অঞ্চলের শিক্ষার্থীদের সপ্ন দেখানোর, তাদের মাঝ থেকে বিতর্ক প্রতিযোগিতার মতো আরও সুপ্ত প্রতিভা বের করে নিয়ে আসতে হবে।আর এই প্রচেষ্টায় জে,বি উচ্চ বিদ্যালয়ের ১৭ব্যাচের এই উদ্যেগ।আসুন না সবাই মিলে কাধে কাধ রেখে কাজ করি!!

@@ -11,7 +11,7 @@ const Programme = () => {
 const { isPending, error} = useQuery({
         queryKey: ['programs'],
         queryFn: () =>
-        axios.get('http://localhost:5000/programs')
+        axios.get('https://diptosikha-server.vercel.app/programs')
             .then(data => {
               setPrograms(data.data);
               return data.data;

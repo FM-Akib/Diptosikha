@@ -20,7 +20,7 @@ const Donation = () => {
         // console.log(donation)
 
        
-         axios.post('http://localhost:5000/donations',donation)
+         axios.post('https://diptosikha-server.vercel.app/donations',donation)
          .then(data => {
         
         if(data.data.acknowledged){

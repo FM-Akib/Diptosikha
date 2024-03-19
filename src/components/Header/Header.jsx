@@ -32,7 +32,7 @@ const Header = () => {
         <>
         <Toaster />      
         <nav className='NavBar'>
-            <img className='logo_diptoshikha' src={logo} alt=""/>
+           <Link to="/"><img className='logo_diptoshikha' src={logo} alt=""/></Link> 
             <ul className={` navItems p-4 duration-500 pl-10 flex items-center ${menu===true?"top-20":"-top-96"}`}>
                 <Activelink to="/">Home</Activelink>
                 <Activelink to="/about">About us</Activelink>

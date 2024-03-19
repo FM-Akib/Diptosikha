@@ -36,7 +36,7 @@ const BlogEdit = () => {
             const Newprogram ={title,img,cost,author,imgtitle,date,description};
 
 
-        axios.post(`http://localhost:5000/programs`,Newprogram)
+        axios.post(`https://diptosikha-server.vercel.app/programs`,Newprogram)
         .then(data => {
         
         if(data.data.acknowledged){

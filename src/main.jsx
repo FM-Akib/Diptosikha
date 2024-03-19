@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "team",
         element: <Team/>,
-        loader: () =>fetch('http://localhost:5000/users')
+        loader: () =>fetch('https://diptosikha-server.vercel.app/users')
       },
       {
         path: "donation",
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: "bloodbank",
         element: <BloodBank/>,
-        loader: ()=>fetch('http://localhost:5000/users')
+        loader: ()=>fetch('https://diptosikha-server.vercel.app/users')
       },
       {
         path: "login",
@@ -66,12 +66,12 @@ const router = createBrowserRouter([
       {
         path: "programs/:id",
         element: <Blog></Blog>,
-        loader: ({ params }) => fetch(`http://localhost:5000/programs/${params.id}`)
+        loader: ({ params }) => fetch(`https://diptosikha-server.vercel.app/programs/${params.id}`)
       },
       {
         path: "profile",
         element: <PrivateRoutes><Profile/></PrivateRoutes>,
-        loader: ()=>fetch('http://localhost:5000/users')
+        loader: ()=>fetch('https://diptosikha-server.vercel.app/users')
       }
     ]
   }

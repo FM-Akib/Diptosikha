@@ -2,7 +2,7 @@
 
 ## https://diptoshikha-d040d.web.app
 
-> [!TIP]
+> [!At a Glance]
 > This site is responsive for mobile as well. Using mongoDB, Express, Node js, React, Firebase Authentication this site developed!
 
 ## Features

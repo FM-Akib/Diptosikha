@@ -48,7 +48,7 @@ console.log(donations);
             <tr>
             <td className="px-6 py-4 whitespace-nowrap">{donation.name}</td>
             <td className="px-6 py-4 whitespace-nowrap">{donation.mobile}</td>
-            <td className="px-6 py-4 whitespace-nowrap">{donation.paymentOn}</td>
+            <td className="px-6 py-4 whitespace-nowrap">{donation.donationOn}</td>
             <td className="px-6 py-4 whitespace-nowrap">
                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{donation.amount}</span>
             </td>
